@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS dosyasını bağlayın -->
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h4><%= message %></h4>
+    <table>
+        <thead>
+            <tr>
+                <% if (data && data.length > 0) { %>
+                    <!-- data dizisi tanımlı ve boş değilse -->
+                    <% for (const key in data[0]) { %>
+                        <th><%= key %></th> <!-- Sütun başlıkları -->
+                    <% } %>
+                <% } else { %>
+                    <!-- data dizisi tanımlı değil veya boşsa -->
+                    <th>...</th> <!-- Hata mesajı veya alternatif içerik -->
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <% if (data && data.length > 0) { %>
+                <% data.forEach((item, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td> <!-- Sıra numarası -->
+                        <% for (const key in item) { %>
+                            <td><%= item[key] %></td> <!-- Satır verileri -->
+                        <% } %>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="...">Veri bulunamadı</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

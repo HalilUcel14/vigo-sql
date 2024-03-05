@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse; /* Tablo hücrelerini birleştirir */
+    width: 100%; /* Tablonun genişliğini ayarlar */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Tablo hücrelerinin kenarlık özelliğini tanımlar */
+    padding: 8px; /* Tablo hücrelerinin iç boşluğunu ayarlar */
+    text-align: left; /* Metin hizalamasını ayarlar */
+}
+
+th {
+    background-color: #f2f2f2; /* Sütun başlıklarının arka plan rengini belirler */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 300px;
+}
